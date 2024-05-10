@@ -1,0 +1,21 @@
+
+p b{color: blue}
+p strong{color: red}
+a:active{color:green}
+li:last-child{background-color: aquamarine}
+td::before{
+    content: "начало туть!";
+}
+#one{
+    letter-spacing: -4px;
+}
+
+#Info{
+    font-style: italic;
+    text-transform: uppercase;
+    text-decoration: underline;
+    line-height: 3;
+    text-align: center;
+    letter-spacing: 3px;
+    Word-spacing: 10px ;
+}
