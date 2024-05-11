@@ -19,3 +19,25 @@ td::before{
     letter-spacing: 3px;
     Word-spacing: 10px ;
 }
+
+.block1 {
+    background: #ffcccb;
+    width: 200px;
+    background:url("../img/img4.jpg");
+    padding: 20px;
+    margin:10px;
+}
+.block2{
+    background:#c2f0c2;
+    height: 150px;
+    background: url("../img/oldschool.jpg");
+    padding: 15px;
+    margin: 20px;
+
+}
+.block3{
+    border:2px dashed #aabbcc;
+    background: url("../img/img4.jpg");
+    position: absolute;
+    opacity: .7;
+}
