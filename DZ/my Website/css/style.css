@@ -1,4 +1,7 @@
-
+*{
+    margin: 0;
+    padding: 0;
+}
 p b{color: blue}
 p strong{color: red}
 a:active{color:green}
@@ -26,6 +29,9 @@ td::before{
     background:url("../img/img4.jpg");
     padding: 20px;
     margin:10px;
+    position: absolute;
+    left: 0;
+    top:0;
 }
 .block2{
     background:#c2f0c2;
@@ -33,6 +39,9 @@ td::before{
     background: url("../img/oldschool.jpg");
     padding: 15px;
     margin: 20px;
+    float: right;
+
+
 
 }
 .block3{
@@ -40,4 +49,35 @@ td::before{
     background: url("../img/img4.jpg");
     position: absolute;
     opacity: .7;
+    position: fixed;
+    left: 50%;
+    bottom:0;
+
+}
+.navigation{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ffcccb;
+    width:100%;
+
+}
+
+ul li{
+    display: inline-block;
+    background: chartreuse;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+ul li:hover{
+    background: #9818FF;
+    color: #18F5FF;
+    -webkit-box-shadow: 4px 4px 66px 57px rgba(255, 236, 0, 0.53);
+    -moz-box-shadow: 4px 4px 66px 57px rgba(255, 236, 0, 0.53);
+    box-shadow: 4px 4px 66px 57px rgba(255, 236, 0, 0.53);
 }
