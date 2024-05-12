@@ -49,9 +49,12 @@
 }
 
 .myanim{
-    width:100px;
-    height: 100px;
-    background:black;
+    padding: 70px;
+    text-align: center;
+    width:1px;
+    height: 1px;
+
+    background:green;
     border-radius:100px;
 }
 .myanim:hover{
@@ -60,5 +63,31 @@
 @keyframes Oneanim {
     0%{transform:scale(1)}
     50%{transform:scale(2)}
+    51%{margin: 100px}
     100%{transform:scale(1)}
+}
+
+.flex-container{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.flex-container div{
+    border:1px solid red;
+}
+.items1{
+    background:#3498db;
+    color:white;
+    flex-basis:100px;
+}
+.items3{
+    background:#2ecc71;
+    color:white;
+    flex-basis: 150px;
+}
+.items2{
+    background:#e74c3c;
+    color:white;
+    flex-basis: 200px;
 }
