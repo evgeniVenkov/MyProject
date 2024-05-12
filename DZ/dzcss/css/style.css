@@ -1,0 +1,64 @@
+.container{
+
+    text-align:center;
+    border: 2px solid #000;
+    padding: 20px;
+}
+@media screen and (max-width:600px) {
+    div{
+        font-size: 16px;
+        background:red;
+    }
+
+}
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+    .container {
+        font-size: 20px;
+        background:green;
+    }
+}
+@media screen and (min-width: 1201px){
+.container{
+    font-size:24px;
+    background:blue;
+}
+
+}
+
+.animated-box{
+    padding:100px ;
+    margin:100px;
+    text-align:center;
+    width:50px;
+
+    border-radius: 100px;
+    background: #aabbcc;
+
+    animation-name:goodAnim;
+    animation-duration:10s;
+    animation-iteration-count:infinite;
+}
+@keyframes goodAnim{
+    0%{border-radius: 100px;}
+    10%{background: red;}
+    20%{transform: scale(100%)}
+    30%{transform: rotate(360deg)}
+    40%{transform: translateX(100px)}
+    50%{transform: translateY(-100px)}
+    100 %{border-radius: 0px;}
+}
+
+.myanim{
+    width:100px;
+    height: 100px;
+    background:black;
+    border-radius:100px;
+}
+.myanim:hover{
+    animation: Oneanim 3s infinite;
+}
+@keyframes Oneanim {
+    0%{transform:scale(1)}
+    50%{transform:scale(2)}
+    100%{transform:scale(1)}
+}
