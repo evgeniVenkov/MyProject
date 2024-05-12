@@ -1,7 +1,10 @@
 *{
-    margin: 0;
+    margin-top :0px;
     padding: 0;
 }
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+p{color: blue!important;}
 p b{color: blue}
 p strong{color: red}
 a:active{color:green}
@@ -9,18 +12,16 @@ li:last-child{background-color: aquamarine}
 td::before{
     content: "начало туть!";
 }
-#one{
-    letter-spacing: -4px;
-}
+
 
 #Info{
-    font-style: italic;
+    font-family: "Pacifico", cursive;
     text-transform: uppercase;
     text-decoration: underline;
     line-height: 3;
     text-align: center;
-    letter-spacing: 3px;
-    Word-spacing: 10px ;
+    /*letter-spacing: 3px;*/
+    /*Word-spacing: 10px ;*/
 }
 
 .block1 {
@@ -31,15 +32,16 @@ td::before{
     margin:10px;
     position: absolute;
     left: 0;
-    top:0;
+    top:150px;
 }
 .block2{
+
     background:#c2f0c2;
     height: 150px;
     background: url("../img/oldschool.jpg");
     padding: 15px;
-    margin: 20px;
-    float: right;
+    margin-top: 100px;
+
 
 
 
