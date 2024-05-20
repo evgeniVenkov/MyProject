@@ -1,9 +1,25 @@
 .image1{
     background: url("https://vip-1gl.ru/vipberrrt/10423beautiful_scenery_wallpaper.jpg");
-    min-height: 600px;
+    min-height: 623px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding-top: 250px;
     color: white;
+    font-size: 20px;
+}
+.image1 h1{
+    font-size: 60px;
+}
+.image2{
+    background: url("https://alt-think.only1egg.com/wp-content/uploads/2015/11/mountain2.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 200px;
+    color: white;
+
 }
