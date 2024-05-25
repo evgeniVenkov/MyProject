@@ -1,8 +1,11 @@
+choise = 8;
+
+
 function whil(){
     while (true)
 {
     num = prompt("enter Number");
-    if (num == 8)
+    if (num == choise)
     {
         break;
     }
