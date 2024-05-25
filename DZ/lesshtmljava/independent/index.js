@@ -80,3 +80,40 @@ function clic(){
 }
 block = document.querySelectorAll("div.block")[0];
 block.addEventListener("dblclick", clic)
+
+trg = document.querySelector(".target");
+
+
+window.onkeydown = function(e){
+    console.log(e.key)
+    
+}
+
+
+
+window.onmousemove = function(e){
+    trg.style.left = e.pageX + "px";
+    trg.style.top = e.pageY + "px";
+    }
+
+let bod = document.querySelector("body")
+bod.style.border = "2px solid silver";
+
+bod.onmouseenter = function() {
+    trg.style.display = "block";
+
+}
+
+bod.onmouseleave = function(){
+    trg.style.display = "none";
+}
+
+var li = document.querySelectorAll(".li");
+li[1].style.backgroundColor = "green";
+
+li.forEach(function(el) {
+    el.onmouseenter = function()
+    {
+        el.style.color = "red";
+    }       
+});
