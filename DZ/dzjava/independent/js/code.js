@@ -24,5 +24,29 @@ for(var i = 0; i<x.length;i++){
         }
     }
 }
+let s = "Word";
+let res = s != "Word" ? "No" : "Yes";
+
+console.warn(res)
 console.log("Min num :" + min)
+
+
+
+var age = 22;
+var day = "Понедельник"
+
+
+switch (day){
+    case "Понедельник":
+        if (age>18)
+            console.log("Просто будет это");
+        else
+            console.warn("ytn")
+        break;
+    case "Вторник":
+        console.log("wsaasf")
+        break;
+
+
+}
 
