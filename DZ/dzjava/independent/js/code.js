@@ -50,3 +50,19 @@ switch (day){
 
 }
 
+
+
+var fruit = [];
+fruit.push("apelsin");
+fruit.push("mandarin");
+fruit.push("ananas");
+fruit.push("ananas");
+fruit.push("ananas");
+fruit.push("banan");
+fruit.push("ananas");
+
+fruit.splice(1,3);
+
+console.log(fruit.join("\\"));
+console.log(fruit.length);
+

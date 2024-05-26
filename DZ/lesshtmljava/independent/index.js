@@ -91,10 +91,10 @@ window.onkeydown = function(e){
 
 
 
-window.onmousemove = function(e){
-    trg.style.left = e.pageX + "px";
-    trg.style.top = e.pageY + "px";
-    }
+// window.onmousemove = function(e){
+ //   trg.style.left = e.pageX + "px";
+  //  trg.style.top = e.pageY + "px";
+ //   }
 
 let bod = document.querySelector("body")
 bod.style.border = "2px solid silver";
@@ -117,3 +117,11 @@ li.forEach(function(el) {
         el.style.color = "red";
     }       
 });
+
+var add = document.querySelector(".add");
+add.onmousedown = function(){
+    var div = document.createElement("div");
+    div.innerHTML = "Неприметный блок";
+    div.classList.add("block");
+    document.getElementsByTagName("body")[0].appendChild(div);
+};
