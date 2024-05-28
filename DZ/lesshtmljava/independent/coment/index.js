@@ -1,12 +1,17 @@
 
 
-let btn = document.querySelector(".bnt");
+let btn = document.querySelector(".btn");
 let countrec = 0;
-
-let bod = document.querySelector("body");
 
 
 btn.onclick = function(){
-    alert("text");
-   
-};
+   let form  = document.querySelector(".rec-form");
+   if(form.name.value.length < 4){
+       alert("Недостаточная длинна ститьи расходов");
+       return false;
+   }
+
+
+
+
+}

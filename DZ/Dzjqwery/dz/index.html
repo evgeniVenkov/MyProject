@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>Список дел</h1>
+<input type="text" placeholder="Задание">
+<br>
+<button class="add">Добавить</button>
+<button class="show"> Отобразить</button>
+<div class="el"> элемент был добавлен</div>
+<div class="content"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+<script>
+    var count = 0;
+$("button, input").css({"margin":"5px",
+    "border-radius":"5px",
+    "padding":"7px"
+
+});
+
+$("button").css({"color":"#FF5533",
+"font-weight":"bold",});
+
+$(".el").css({
+    "border":"1px solid #A9A9A9",
+    "width": "190px",
+    "background-color":"#CCCCCC",
+    "padding": "7px",
+    "margin":"5px",
+    "border-radius":"5px",
+    "font-weight":"bold",
+    "color":"#696969",
+    "text-align":"center"
+});
+
+$(".el").hide();
+$(".content").hide();
+
+$(".task").css({"margin":"7px"});
+
+$(".add").on('click',function ()
+{
+    var text = `<div class = "task"> Задание № ${count} ${$("input").val()} </div>`
+    $(".content").append(text)
+    count++;
+    $(".el").slideDown();
+    setTimeout(
+  function()
+  {
+    $(".el").slideUp();
+  }, 2000);
+});
+
+
+$(".show").on('click',function (){
+    $(".content").toggle();
+})
+
+
+</script>
+</body>
+</html>
