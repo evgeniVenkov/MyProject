@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block title%}
+Главная страница
+{% endblock%}
+
+{% block body%}
+<h1>Главная страница</h1>
+<h3>{{title}}</h3>
+<p>{{number}}</p>
+{%for post in number%}
+    <h4>{{post.one}}</h4>
+    <h5>{{post.two}}</h5>
+    <h6>{{post.three}}</h6>
+{%endfor %}
+
+{%endblock%}
