@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.contrib.auth.decorators import login_required
 
 def home(request):
     numslov = [{'one':1,
@@ -15,3 +15,6 @@ def home(request):
     return render(request, 'blog/home.html',data)
 def about(request):
     return render(request, 'blog/about.html')
+@login_required
+def profile(request):
+    return render(request,'users/profile.html')
