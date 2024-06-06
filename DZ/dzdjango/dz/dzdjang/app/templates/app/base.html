@@ -34,6 +34,20 @@
   </header>
 
 
+
+{% if messages%}
+
+    {% for mess in messages %}
+     <div class="alert alert-success mt-5">{{mess}}</div>
+    {%endfor%}
+
+{%endif%}
+
+    {% if user.is_authenticated %}
+    <h1>Вы в системе</h1>
+    {%endif%}
+
+
     {% block body %}
     {% endblock %}
 

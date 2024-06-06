@@ -8,4 +8,29 @@ ProfilePage
 
 {% block body%}
 <h1>Профиль</h1>
+
+<div class="my-3 p-3 bg-body rounded shadow-sm w-50">
+
+    <div class="d-flex text-body-secondary pt-3">
+      <img class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" src="{{ user.profile.img.url }}" ></img>
+      <p class="pb-3 mb-0 small lh-sm border-bottom">
+        <strong class="d-block text-gray-dark">{{ user.username}}</strong>
+        {% if user.email%}
+          <b>Email:</b> {{user.email}}
+          {% endif%}
+      </p>
+    </div>
+</div>
+
+<h2>Изменить Данные пользователя</h2>
+
+<form class="w-50 text-center" enctype="multipart/form-data" method="post" >
+    {%csrf_token%}
+
+    {{updateform}}
+    {{profileform}}
+
+    <button class="btn btn-outline-success mt-2" type="submit">Обновить</button>
+
+</form>
 {%endblock%}

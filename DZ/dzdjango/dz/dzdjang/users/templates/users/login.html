@@ -7,5 +7,16 @@ AuthPage
 
 
 {% block body%}
-<h1>Авторизация</h1>
+
+
+<h1>Регистрация</h1>
+
+
+<form class="w-50 text-center" method="post" >
+    {%csrf_token%}
+    {{form}}
+
+    <button class="btn btn-outline-success mt-2" type="submit">Войти</button>
+
+</form>
 {%endblock%}
