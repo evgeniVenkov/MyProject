@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib import messages
 from .form import UserForm, ProfileForm,UserUpdateForm,PostsForm
 from django.contrib.auth.decorators import login_required
@@ -9,6 +9,9 @@ from django.views.generic import (ListView,
                                   UpdateView,
                                   DeleteView)
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.models import User
+
+
 def register_view(request):
     if  request.method == "POST":
         form = UserForm(request.POST)
@@ -51,6 +54,7 @@ class ShowPosts(ListView):
     template_name = 'users/posts.html'
     context_object_name = 'posts'
     ordering = ['date']
+    paginate_by = 4
 
     # передача доп параметров
     def get_context_data(self,**kwards):
@@ -59,6 +63,23 @@ class ShowPosts(ListView):
 
         return ctx
 
+
+class ShowPostsUser(ListView):
+    model = Posts
+    template_name = 'users/user_posts.html'
+    context_object_name = 'posts'
+
+    paginate_by = 4
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username=self.kwargs.get('username'))
+
+        return Posts.objects.filter(avtor=user).order_by('-date')
+    def get_context_data(self,**kwards):
+        ctx = super(ShowPostsUser,self).get_context_data(**kwards)
+        ctx['title'] = f'Статьи: {self.kwargs.get('username')}'
+
+        return ctx
 class DetailPosts(DetailView):
     model = Posts
     # template_name = 'users/posts_detail.html'

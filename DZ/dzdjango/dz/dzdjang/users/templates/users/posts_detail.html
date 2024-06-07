@@ -10,9 +10,9 @@
 <h1>Пост: {{post.title}}</h1>
 <div class="alert alert-light border w-75">
     <h2>{{post.title}}</h2>
-    <p>{{post.content}}</p>
+    <p>{{post.content|safe}}</p>
     <img src="{{post.avtor.profile.img.url}}" alt="{{post.avtor}}" class="userimg">
-    <span>Автор статьи: {{post.avtor}} Дата: {{post.date}}</span>
+    <span>Автор статьи: <a href="{% url 'post-user' post.avtor %}">{{post.avtor}}</a> Дата: {{post.date}}</span>
    {% if post.avtor == user %}
     <hr>
     <a href="{% url 'post-update' post.id %}" class="btn btn-outline-success">Обновить статью</a>

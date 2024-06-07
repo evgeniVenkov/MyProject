@@ -2,13 +2,16 @@
 
 {% block title%}
 
-PostPage
+{{title}}
 {% endblock%}
 
 
 
 {% block body%}
-<h1>Посты</h1>
+
+<h1>Посты автора {{view.kwargs.username}}</h1>
+<h3>Колличество постов: {{page_obj.paginator.count}}</h3>
+
 <a href="{% url 'post-add' %}" class =' btn btn-info my-3'>Добавить статью </a>
 {% for post in posts%}
 <div class="alert alert-light border w-75">
