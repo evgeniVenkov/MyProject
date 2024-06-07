@@ -145,6 +145,7 @@ class Pochta(CreateView):
         plain_message = form.cleaned_data['text']
         from_email = form.cleaned_data['mail']
         to = 'venigret90@mail.ru'
+        messages.success(self.request, f'Сообщение было успешно отправлено')
         send_mail(subject, plain_message, from_email, [to])
 
         return super().form_valid(form)
