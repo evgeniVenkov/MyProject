@@ -18,5 +18,6 @@ urlpatterns = [
     path('post/<int:pk>/update',views.UpdatePosts.as_view() , name = 'post-update' ),
     path('post/<int:pk>/delete',views.DeletePost.as_view() , name = 'post-delete' ),
     path('post/<str:username>',views.ShowPostsUser.as_view() , name = 'post-user' ),
+    path('contakti/',views.Pochta.as_view(),name='pochta'),
 
 ]

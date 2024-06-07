@@ -25,6 +25,17 @@ class Profile(models.Model):
             img.thumbnail(resize)
             img.save(self.img.path)
 
+class Pochta(models.Model):
+    tema = models.CharField('Тема письма', max_length=50)
+    mail = models.CharField("Почта отправителя" , max_length=50)
+    text = models.TextField("Текст сообщения")
+    class Meta:
+        verbose_name = 'Письмо'
+        verbose_name_plural = 'Письма'
+    def get_absolute_url(self):
+        return reverse('main')
+    def __str__(self):
+        return f'{self.tema}'
 
 class Posts(models.Model):
     title = models.CharField('Название стратьи',unique= True,max_length=100)

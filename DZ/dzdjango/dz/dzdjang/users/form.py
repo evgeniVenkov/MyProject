@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import Profile,Posts
+from .models import Profile,Posts,Pochta
 
 
 
@@ -59,12 +59,10 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['img', 'soglasie','pol']
-
 class PostsForm(forms.ModelForm):
 
     title = forms.CharField(
         label="Название статьи"
-
     )
     content = forms.CharField(
         label='Статья'
@@ -78,3 +76,10 @@ class PostsForm(forms.ModelForm):
     class Meta:
         model = Posts
         fields = ['title','content','date','Avtor']
+class PochtaForm(forms.ModelForm):
+    tema = forms.CharField(label='Тема письма')
+    mail = forms.CharField(label="Почта отправителя")
+    text = forms.CharField(label="Текст сообщения")
+    class Meta:
+        model = Pochta
+        fields = ['tema','mail','text']

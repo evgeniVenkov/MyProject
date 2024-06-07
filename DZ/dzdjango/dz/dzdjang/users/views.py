@@ -1,8 +1,8 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib import messages
-from .form import UserForm, ProfileForm,UserUpdateForm,PostsForm
+from .form import UserForm, ProfileForm,UserUpdateForm,PostsForm,PochtaForm
 from django.contrib.auth.decorators import login_required
-from .models import Posts
+from .models import Posts,Pochta
 from django.views.generic import (ListView,
                                   DetailView,
                                   CreateView,
@@ -10,7 +10,7 @@ from django.views.generic import (ListView,
                                   DeleteView)
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
-
+from django.core.mail import send_mail
 
 def register_view(request):
     if  request.method == "POST":
@@ -62,8 +62,6 @@ class ShowPosts(ListView):
         ctx['name'] = f'{self.request.user.username}'
 
         return ctx
-
-
 class ShowPostsUser(ListView):
     model = Posts
     template_name = 'users/user_posts.html'
@@ -84,8 +82,6 @@ class DetailPosts(DetailView):
     model = Posts
     # template_name = 'users/posts_detail.html'
     context_object_name = 'post'
-
-
     def get_context_data(self,**kwards):
         ctx = super(DetailPosts,self).get_context_data(**kwards)
         ctx['title'] = Posts.objects.get(pk=self.kwargs['pk']).title
@@ -138,3 +134,17 @@ class DeletePost(DeleteView,LoginRequiredMixin,UserPassesTestMixin):
         if self.request.user == post.avtor:
             return True
         return False
+
+class Pochta(CreateView):
+    model= Pochta
+    template_name = 'users/contakti.html'
+    fields = ['tema', 'mail','text']
+
+    def form_valid(self, form):
+        subject = form.cleaned_data['tema']
+        plain_message = form.cleaned_data['text']
+        from_email = form.cleaned_data['mail']
+        to = 'venigret90@mail.ru'
+        send_mail(subject, plain_message, from_email, [to])
+
+        return super().form_valid(form)

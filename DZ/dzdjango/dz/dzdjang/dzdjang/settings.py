@@ -123,7 +123,7 @@ EMAIL_HOST = 'smtp.mail.ru'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'venigret90@mail.ru'
-EMAIL_HOST_PASSWORD = '1ddpbreXmauKngJYNdu2'
+EMAIL_HOST_PASSWORD = 'Сказали не безопастно сюда его писать :)*'
 
 STATIC_URL = 'static/'
 
