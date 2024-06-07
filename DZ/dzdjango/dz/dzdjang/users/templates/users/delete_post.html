@@ -1,0 +1,24 @@
+{% extends  'app/base.html'%}
+
+{% block title%}
+{{title}}
+{% endblock%}
+
+
+
+{% block body%}
+
+
+<h1>Удалить статью</h1>
+<h2>{{object.title}}</h2>
+
+<form class="w-50 text-center form-control myform" method="post"  >
+    {%csrf_token%}
+    {{form.as_p}}
+
+    <button class="btn btn-outline-danger mt-2" type="submit">  Удалить! </button>
+
+    <a href="{% url 'post-deteil' object.id%}" class="btn btn-outline-success mt-2" > НЕТ</a>
+
+</form>
+{%endblock%}

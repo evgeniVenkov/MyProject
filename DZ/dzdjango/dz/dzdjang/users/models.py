@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
+from django.utils import timezone
+from django.urls import reverse
+
 
 choise = (('male','Мужской'),('female','Женский'))
 
@@ -23,3 +26,17 @@ class Profile(models.Model):
             img.save(self.img.path)
 
 
+class Posts(models.Model):
+    title = models.CharField('Название стратьи',unique= True,max_length=100)
+    content = models.TextField('основной текст')
+    avtor = models.ForeignKey(User, on_delete=models.CASCADE,verbose_name="Автор")
+    date = models.DateTimeField('Дата' ,default=timezone.now)
+
+    def __str__(self):
+        return f'{self.title}'
+    class Meta:
+        verbose_name = 'Cтатья'
+        verbose_name_plural = 'Статьи'
+
+    def get_absolute_url(self):
+        return reverse('post-deteil',kwargs={'pk':self.pk})

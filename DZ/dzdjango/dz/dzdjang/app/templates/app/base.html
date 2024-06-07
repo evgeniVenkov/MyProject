@@ -25,9 +25,11 @@
       </a>
 
       <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/">main</a>
-        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{% url 'product'%}">Product</a>
-
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/">Главная страница</a>
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{% url 'product'%}">Продукты</a>
+          {% if user.is_authenticated %}
+        <a class="me-3 py-2 btn btn-outline-light" href="{% url 'post-add'%}">Добавить статью</a>
+          {%endif%}
       </nav>
     </div>
 
@@ -44,7 +46,7 @@
 {%endif%}
 
     {% if user.is_authenticated %}
-    <h1>Вы в системе</h1>
+    <h1>Вы в системе: {{user.username}} </h1>
     {%endif%}
 
 

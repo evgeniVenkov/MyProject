@@ -1,3 +1,19 @@
 header{
     background: silver;
 }
+.userimg
+{
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+
+}
+.myform input, .myform textarea
+{
+    display: block;
+    width: 96%;
+    margin-top: 5px;
+    border: 1px solid green;
+    border-radius: 10px;
+    padding: 5px;
+}

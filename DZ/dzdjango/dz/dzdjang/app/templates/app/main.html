@@ -27,10 +27,10 @@ Main page
         <form action="{% url 'exit'%}" method="post" >
             {%csrf_token%}
             <button class="btn btn-outline-success">Выйти</button>
-
         </form>
 
         <a href="{% url 'profile'%}" class="btn btn-outline-success mt-2">Профиль</a>
+        <a href="{% url 'posts'%}" class="btn btn-outline-success mt-2">Посты</a>
 
 
 </div>
