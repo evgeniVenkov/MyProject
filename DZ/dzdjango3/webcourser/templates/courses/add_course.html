@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block title%}
+{{ title }}
+{% endblock%}
+
+
+
+{% block main %}
+
+<div class="container">
+
+    <form class="form-control" enctype="multipart/form-data" method="post"  >
+    {%csrf_token%}
+    {{form.as_p}}
+
+    <button class="btn btn-outline-success mt-2" type="submit">  Добавить  </button>
+
+</form>
+
+</div>
+
+{% endblock%}

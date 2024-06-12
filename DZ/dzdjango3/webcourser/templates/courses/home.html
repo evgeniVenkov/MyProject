@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block title%}
+{{ title }}
+{% endblock%}
+
+{% block main %}
+
+<div class="m presentation container">
+    <img src="https://vender.su/wp-content/uploads/2023/11/donat.png">
+    <h2>Хотите изучить програмирование?</h2>
+    <p>Здесь вы найдёте крутые курсы по разным направлениям</p>
+
+</div>
+
+
+<div class="courses container">
+    {% for cours in courses %}
+            <div class="course">
+
+                {% if cours.image%}
+                <img src="{{ cours.image.url}}" alt="{{cours.title}}">
+                {% else%}
+                <img src="/pictures/default.jpg" alt="{{cours.title}}">
+                {% endif%}
+                <h3>{{cours.title}}</h3>
+                <a href="{{ cours.get_absolute_url }}"> Смотреть курс</a>
+            </div>
+
+
+    {%endfor%}
+
+
+</div>
+
+{% endblock%}

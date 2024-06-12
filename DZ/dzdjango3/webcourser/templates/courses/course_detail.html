@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block title%}
+{{ title }}
+{% endblock%}
+
+
+
+{% block main %}
+
+<div class="courses container">
+
+            <div class="course">
+
+                {% if object.image%}
+                <img src="{{ object.image.url}}" alt="{{object.title}}">
+                {% else%}
+                <img src="/pictures/default.jpg" alt="{{object.title}}">
+                {% endif%}
+                <h3>{{object.title}}</h3>
+
+            </div>
+
+            <div class="aside">
+                <h1>Описание курса</h1>
+                <p>{{ object.desc}}</p>
+                <ul class="spisok">
+                    {% for el in lessons%}
+                    <li><a href="{{el.get_absolute_url}}"> {{ el.title}}</a></li>
+                    {% endfor%}
+                </ul>
+            </div>
+
+
+
+
+</div>
+
+{% endblock%}
