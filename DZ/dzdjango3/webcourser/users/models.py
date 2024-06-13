@@ -11,7 +11,7 @@ class Profile(models.Model):
     soglasie = models.BooleanField(default=False)
     pol = models.CharField('Выбирите пол', max_length=6, choices=choise,default='male')
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    img = models.ImageField("Фото Пользователя" ,default = 'user_img/default.png', upload_to='user_img')
+    img = models.ImageField("Фото Пользователя" ,default = 'default.jpg', upload_to='user_img')
 
     def __str__(self):
         return f'Профиль Пользователя: {self.user.username}'

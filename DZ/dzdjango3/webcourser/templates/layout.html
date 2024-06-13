@@ -18,7 +18,15 @@
         <nav>
             <a class="hedA" href="{% url 'home-page' %}"> Главная</a>
             <a class="hedA" href="/">Тарифы</a>
+            {% if user.is_authenticated%}
+            <a href="{% url 'exit' %}" class="heaA"> Выйти</a>
+            <a href="{% url 'profile' %}" class="heaA"> Профиль</a>
             <a class="hedA" href="{% url 'add-course'%}"> Добавить курс</a>
+            {%else%}
+            <a href="{% url 'login' %}" class="heaA"> Войти</a>
+            <a href="{% url 'register' %}" class="heaA"> Зарегистрироваться</a>
+            {%endif%}
+
         </nav>
 </header>
 

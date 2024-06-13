@@ -10,7 +10,7 @@ def register_view(request):
             form.save()
             username = form.cleaned_data['username']
             messages.success(request,f'Аккаунт: {username} успешно создан!')
-            return redirect('main')
+            return redirect('home-page')
 
     else:
         form = UserForm()
