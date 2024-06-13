@@ -1,0 +1,22 @@
+{% extends  'app/base.html'%}
+
+{% block title%}
+RegisterPage
+{% endblock%}
+
+
+
+{% block body%}
+
+
+<h1>Регистрация</h1>
+
+
+<form class="w-50 text-center" method="post" >
+    {%csrf_token%}
+    {{form}}
+
+    <button class="btn btn-outline-success mt-2" type="submit">Зарегистрироваться</button>
+    <a href="{% url 'login'%}" class="btn btn-outline-info mt-2 ms-2" >Авторизоваться</a>
+</form>
+{%endblock%}

@@ -1,0 +1,23 @@
+{% extends  'app/base.html'%}
+
+{% block title%}
+AuthPage
+{% endblock%}
+
+
+
+{% block body%}
+
+
+<h1>Авторизация</h1>
+
+
+<form class="w-50 text-center" method="post" >
+    {%csrf_token%}
+    {{form}}
+
+    <button class="btn btn-outline-success mt-2" type="submit">Войти</button>
+    <hr>
+    <a href="{% url 'password_reset' %}"> Востановить пароль</a>
+</form>
+{%endblock%}
