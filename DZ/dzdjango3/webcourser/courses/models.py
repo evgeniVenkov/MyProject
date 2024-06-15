@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-
+from django.contrib.auth.models import User
 
 class Course(models.Model):
     slug = models.SlugField("Уникальное название курса",unique=True)
@@ -12,8 +12,6 @@ class Course(models.Model):
         return self.title
     def get_absolute_url(self):
         return  reverse("course-page", kwargs={"slug": self.slug})
-
-
 class Lesson(models.Model):
     slug = models.SlugField('Уникальное название курса',unique=True)
     title = models.CharField(" Название урока", max_length=100)
@@ -27,6 +25,15 @@ class Lesson(models.Model):
 
     def get_absolute_url(self):
         return reverse("lesson-page", kwargs={"slug": self.course.slug, 'lesson_slug': self.slug})
+
+class Comment(models.Model):
+    text = models.TextField("Текст коментария")
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    lesson = models.ForeignKey(Lesson,on_delete=models.CASCADE)
+    def __str__(self):
+        return self.text
+
+
 
 
 

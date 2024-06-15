@@ -19,7 +19,7 @@
             <a class="hedA" href="{% url 'home-page' %}"> Главная</a>
             <a class="hedA" href="/">Тарифы</a>
             {% if user.is_authenticated%}
-            <a href="{% url 'exit' %}" class="heaA"> Выйти</a>
+
             <a href="{% url 'profile' %}" class="heaA"> Профиль</a>
             <a class="hedA" href="{% url 'add-course'%}"> Добавить курс</a>
             {%else%}
@@ -28,6 +28,12 @@
             {%endif%}
 
         </nav>
+    {% if user.is_authenticated%}
+        <form action="{% url 'exit' %}" method="post" class="heaA">
+                 {% csrf_token %}
+                <button class="btnexit" type="submit">Выйти</button>
+            </form>
+    {% endif%}
 </header>
 
 {% block main %}

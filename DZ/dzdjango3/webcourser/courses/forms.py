@@ -1,5 +1,5 @@
 from django import forms
-from .models import Course
+from .models import Course, Comment, Lesson
 
 
 class CourseForm(forms.ModelForm):
@@ -16,3 +16,12 @@ class CourseForm(forms.ModelForm):
     class Meta:
         model = Course
         fields = ['slug', 'title', 'desc', 'image']
+
+
+class CommentForm(forms.ModelForm):
+    text = forms.TextInput()
+    user = forms.CharField(widget = forms.HiddenInput())
+    lesson = forms.CharField(widget = forms.HiddenInput())
+    class Meta:
+        model = Comment
+        fields = ['text', 'user', 'lesson']

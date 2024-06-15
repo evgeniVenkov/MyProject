@@ -32,6 +32,29 @@
 
 
 
+
+
 </div>
+{% if user.is_authenticated%}
+
+             <form action="" method="post">
+                 {{Comentform}}
+                 {% csrf_token%}
+                <button>Добавить</button>
+             </form>
+
+
+            <h2>коментарии</h2>
+            <form action="">
+                {% for el in allcoment %}
+                <div class="coment">
+                <div>{{el.text}}</div>
+                <p> автор: {{el.user}}</p>
+                </div>
+                {% endfor%}
+            </form>
+
+
+{% endif %}
 
 {% endblock%}
