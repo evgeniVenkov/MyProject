@@ -27,7 +27,7 @@ class Lesson(models.Model):
         return reverse("lesson-page", kwargs={"slug": self.course.slug, 'lesson_slug': self.slug})
 
 class Comment(models.Model):
-    text = models.TextField("Текст коментария")
+    text = models.TextField("")
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     lesson = models.ForeignKey(Lesson,on_delete=models.CASCADE)
     def __str__(self):

@@ -19,9 +19,9 @@ class CourseForm(forms.ModelForm):
 
 
 class CommentForm(forms.ModelForm):
-    text = forms.TextInput()
-    user = forms.CharField(widget = forms.HiddenInput())
-    lesson = forms.CharField(widget = forms.HiddenInput())
+
     class Meta:
         model = Comment
         fields = ['text', 'user', 'lesson']
+
+        widgets = {'user': forms.HiddenInput(),'lesson': forms.HiddenInput(), 'text': forms.Textarea(attrs={ 'placeholder':'текст коментария'}) }

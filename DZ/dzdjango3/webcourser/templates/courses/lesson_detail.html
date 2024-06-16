@@ -37,7 +37,7 @@
 </div>
 {% if user.is_authenticated%}
 
-             <form action="" method="post">
+             <form class="formComent" action="" method="post">
                  {{Comentform}}
                  {% csrf_token%}
                 <button>Добавить</button>

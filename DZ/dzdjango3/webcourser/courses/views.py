@@ -48,10 +48,15 @@ class LessonPage(DetailView):
         return ctx
 
     def post(self, request, *args, **kwargs):
-        less = Lesson.objects.filter(slug=self.kwargs['lesson_slug']).first()
+
+        # course = Course.objects.filter(slug=self.kwargs['slug']).first()
+        # lesson = Lesson.objects.filter(course=course).filter(slug=self.kwargs['lesson_slug']).first()
+
+        lesson = Lesson.objects.filter(slug=self.kwargs['lesson_slug']).first()
+
         post = request.POST.copy()
-        post['lesson'] = Lesson(less)
-        post['user'] = User(request.user)
+        post['lesson'] = lesson
+        post['user'] = request.user
         request.POST = post
 
 
