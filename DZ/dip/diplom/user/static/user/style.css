@@ -1,0 +1,43 @@
+body{
+
+}
+
+.ImgIco{
+    width: 100px;
+    height: 100px;
+
+}
+.container{
+    margin: 0 10%;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+header ul{
+  list-style: none;
+}
+header ul li {
+  display: inline-block;
+  margin-left: 25px;
+  cursor: pointer;
+}
+header ul li a {
+    text-decoration: none;
+    color: #565355;
+    transition: 200ms ease ;
+}
+
+header ul li a:hover{
+    color: black;
+    font-weight: bold;
+}
+.logo{
+    display: flex;
+    color: #a8a2a6;
+}
+.logo h3{
+    margin-left: 10px;
+}
