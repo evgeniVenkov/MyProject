@@ -17,10 +17,14 @@
      лишнее из ссылки</h3>
  </span>
   <ul>
-      <li><a href="">Главная</a></li>
-      <li><a href="">Про нас</a> </li>
-      <li><a href="">Войти</a>  </li>
-      <li><a href="">Регистрация</a> </li>
+      <li><a href="{% url 'index' %}">Главная</a></li>
+      <li><a href="{% url 'about' %}">Про нас</a> </li>
+      {% if not user.is_authenticated %}
+      <li><a href="{% url 'login'%}">Войти</a>  </li>
+      <li><a href="{% url 'register'%}">Регистрация</a> </li>
+      {% else %}
+      <li><a href="{%url 'link' %}">Ссылки</a></li>
+      {%endif%}
   </ul>
 </header>
     {% block main %} {% endblock%}

@@ -7,24 +7,31 @@ ProfilePage
 
 
 {% block main%}
-<h1>Кабинет пользователя</h1>
+<h1 class="text-center">Кабинет пользователя</h1>
 
 <div class="text-center">
-        <strong class="d-block text-gray-dark">{{ user.username}}</strong>
+        <strong class="text-center">{{ user.username}}</strong>
           {% if user.email%}
-          <b>Email:</b> {{user.email}}
+         <p class="text-center"> <b>Email:</b> {{user.email}}</p>
           {% endif%}
-
+</div>
+<div class="centr">
+    <form action="{% url 'exit' %}" method="post">
+        {% csrf_token %}
+        <button class="btn" type="submit">выйти из кабинета</button>
+        </form>
 </div>
 
-<h2>Изменить Данные пользователя</h2>
 
-<form method="post" >
-    {%csrf_token%}
+<h2 class="text-center">Изменить Данные пользователя</h2>
 
-    {{profileform}}
+<div class="centr">
+    <form  method="post" >
+        {%csrf_token%}
+        {{profileform}}
 
-    <button class="" type="submit">Обновить</button>
+        <button class="btn" type="submit">Обновить</button>
 
-</form>
+    </form>
+</div>
 {%endblock%}

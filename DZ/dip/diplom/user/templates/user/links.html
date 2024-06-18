@@ -1,0 +1,31 @@
+{% extends  'base.html'%}
+
+{% block title%}
+LinksPage
+{% endblock%}
+
+
+
+{% block main%}
+
+
+<h1 class="text-center">ссылки</h1>
+
+<div class="centr">
+    <form class="authform" method="post" >
+        {%csrf_token%}
+        {{form}}
+        <button class="btn" type="submit">Добавить</button>
+        
+    </form>
+
+
+</div>
+<hr>
+
+<h1 class="text-center">сокращёные ссылки</h1>
+    {% for el in alllinks %}
+    <a class="centrlink" href="{{el.link}}">{{el.slug}}</a>
+    <br>
+    {% endfor %}
+{%endblock%}

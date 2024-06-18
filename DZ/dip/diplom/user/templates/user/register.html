@@ -1,0 +1,24 @@
+{% extends  'base.html'%}
+
+{% block title%}
+regisretPage
+{% endblock%}
+
+
+
+{% block main%}
+
+
+<h1 class="text-center">Регистрация</h1>
+
+<div class="centr">
+    <form class="authform" method="post" >
+        {%csrf_token%}
+        {{form}}
+
+        <button class="" type="submit">Зарегистрироваться</button>
+        <hr>
+
+    </form>
+</div>
+{%endblock%}
