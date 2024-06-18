@@ -1,0 +1,24 @@
+{% extends  'base.html'%}
+
+{% block title%}
+AuthPage
+{% endblock%}
+
+
+
+{% block main%}
+
+
+<h1 class="text-center">Авторизация</h1>
+
+<div class="centr">
+    <form class="authform" method="post" >
+        {%csrf_token%}
+        {{form}}
+
+        <button class="" type="submit">Войти</button>
+        <hr>
+
+    </form>
+</div>
+{%endblock%}
